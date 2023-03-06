@@ -42,40 +42,8 @@ namespace ChallengesWithTestsMark8
 
         public double SumOfMinAndMax(IEnumerable<double> numbers)
         {
-            if (numbers == null || numbers.Count() <= 0)
-            {
-                return 0;
-            }
-
-            double min = 0;
-            double max = 0;
-            double currentMin = 0;
-            
-
-            var list = numbers.ToList();
-
-            for (int i = 0; i < list.Count - 1; i++)
-            {
-                if (list[i] > list[i+1])
-                {
-                    max = list[i];
-                }               
-            }
-
-
-            for (int i = 0; i < list.Count - 1; i++)
-            {
-                if (list[i] < list[i + 1])
-                {
-                    currentMin = list[i];
-                    if (currentMin < min)
-                    {
-                        min = currentMin;
-                    }
-                }
-            }
-                
-            return min + max;
+                           
+                return numbers == null || numbers.Count() == 0 ? 0 : numbers.Min() + numbers.Max();                      
         }
 
         public int GetLengthOfShortestString(string str1, string str2)

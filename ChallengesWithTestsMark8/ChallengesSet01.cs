@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Net.Security;
 
 namespace ChallengesWithTestsMark8
 {
@@ -28,15 +29,7 @@ namespace ChallengesWithTestsMark8
 
         public static int GetSmallestNumber(int number1, int number2)
         {
-            if(number1 < number2)
-            {
-                return number1;
-            } 
-            if(number2 < number1)
-            {
-                return number2;
-            }
-            
+            return Math.Min(number1, number2);
         }
 
         public long Multiply(long factor1, long factor2)
@@ -46,12 +39,16 @@ namespace ChallengesWithTestsMark8
 
         public string GetGreeting(string nameOfPerson)
         {
-            return "Hello, (nameOfPerson) how has your day been?";
+            if (nameOfPerson == "")
+            {
+                return "Hello!";
+            }
+            return $"Hello, {nameOfPerson}!";
         }
 
         public string GetHey()
         {
-            return "Hey";
+            return $"HEY!";
         }
     }
 }
